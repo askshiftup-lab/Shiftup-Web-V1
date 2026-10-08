@@ -2,25 +2,162 @@
 
 :root {
   --background: #ffffff;
-  --foreground: #171717;
+  --foreground: #111322;
+  --muted: #606273;
+  --border: #e9e6f2;
+  --purple: #6c2bff;
+  --purple-soft: #f7f3ff;
+  --navy: #080b2a;
+  --near-black: #0a0a12;
+  --radius-card: 20px;
+  --shadow-card: 0 8px 30px rgba(17, 19, 34, 0.04);
+  --shadow-card-hover: 0 14px 36px rgba(108, 43, 255, 0.07);
 }
 
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+  --font-sans: var(--font-sora);
+  --color-shiftup-navy: #080b2a;
+  --color-shiftup-ink: #0a0a12;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+/* Marketing site is light-first; dark sections are explicit `.surface-navy` islands. */
+html {
+  scroll-behavior: smooth;
+  color-scheme: light;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  .card-surface {
+    transition: none;
   }
 }
 
 body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  background: #ffffff;
+  color: #111322;
+  font-family: var(--font-sora), system-ui, sans-serif;
+  padding-bottom: env(safe-area-inset-bottom, 0);
+}
+
+@media (max-width: 767px) {
+  body.has-mobile-cta {
+    padding-bottom: calc(72px + env(safe-area-inset-bottom, 0));
+  }
+}
+
+::selection {
+  background: #eee7ff;
+  color: #111322;
+}
+
+.gradient-text {
+  color: #6c2bff;
+  background: linear-gradient(135deg, #6c2bff, #8b3dff);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+@supports not ((-webkit-background-clip: text) or (background-clip: text)) {
+  .gradient-text {
+    -webkit-text-fill-color: unset;
+    color: #6c2bff;
+  }
+}
+
+.section-pad {
+  @apply py-14 md:py-20 lg:py-24;
+}
+
+.container-main {
+  @apply mx-auto w-full max-w-[1280px] px-4 sm:px-5 md:px-6;
+}
+
+/* Explicit light canvas — prevents inherited contrast bugs */
+.surface-light {
+  background-color: #ffffff;
+  color: #111322;
+}
+
+.surface-soft {
+  background-color: #f7f3ff;
+  color: #111322;
+}
+
+/* Navy / near-black marketing sections — always light text */
+.surface-navy {
+  background-color: var(--navy);
+  color: #ffffff;
+}
+
+.surface-near-black {
+  background-color: var(--near-black);
+  color: #ffffff;
+}
+
+.surface-navy .text-muted,
+.surface-near-black .text-muted {
+  color: rgba(255, 255, 255, 0.72);
+}
+
+.card-surface {
+  @apply rounded-[20px] border border-[#E9E6F2] bg-white text-[#111322] transition duration-300;
+  box-shadow: var(--shadow-card);
+}
+
+.card-surface:hover {
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-card-hover);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .card-surface:hover {
+    transform: none;
+  }
+}
+
+.btn-primary {
+  @apply inline-flex min-h-[44px] items-center justify-center rounded-full bg-gradient-to-br from-[#6C2BFF] to-[#8B3DFF] px-6 text-[15px] font-bold text-white;
+  box-shadow: 0 8px 24px rgba(108, 43, 255, 0.28);
+}
+
+.btn-secondary {
+  @apply inline-flex min-h-[44px] items-center justify-center rounded-full border border-[#E9E6F2] bg-white px-6 text-[15px] font-bold text-[#111322];
+}
+
+.btn-on-dark {
+  @apply inline-flex min-h-[44px] items-center justify-center rounded-full border border-white/25 bg-white/10 px-6 text-[15px] font-bold text-white hover:bg-white/15;
+}
+
+.btn-tertiary {
+  @apply inline-flex min-h-[44px] items-center font-semibold text-[#6C2BFF] underline-offset-4 hover:underline;
+}
+
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border-width: 0;
+}
+
+.focus\:not-sr-only:focus {
+  position: static;
+  width: auto;
+  height: auto;
+  padding: inherit;
+  margin: inherit;
+  overflow: visible;
+  clip: auto;
+  white-space: normal;
 }

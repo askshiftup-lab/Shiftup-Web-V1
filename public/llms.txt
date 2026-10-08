@@ -1,0 +1,53 @@
+# Shiftup Lab Private Limited
+> Building the intelligence layer for the world's student ecosystem.
+> https://shiftuplab.com
+
+## Company
+- Name: Shiftup Lab Private Limited
+- Location: Bengaluru, India
+- Scope: India → Asia → Global
+- Stage: Idea / MVP, pre-traction
+- Raise: ₹5 Cr pre-seed (currently raising)
+
+## Flagship Product: Dino
+- Category: The Non-Academic Student Ecosystem
+- Tagline: Your Student Digital Twin. Your AI BFF. Your Student World.
+- Promise: Think. Plan. Execute. Decide.
+- Journey: Identity → Interests → People → Community → Decisions → Opportunities → Skills → Career → Life
+
+## Student Digital Twin
+A student-owned, privacy-conscious model of evolving interests, goals, preferences, skills, and decisions powering contextual intelligence in Dino.
+
+## Jenny AI
+Context-aware AI companion inside Dino for planning and decisions — not generic chat; not a replacement for professional counselling.
+
+## Vision
+A world where no student navigates the future alone.
+
+## Mission
+Give every student an intelligent, trusted, human-centred ecosystem for thinking, planning, executing, and deciding.
+
+## Ethics (summary)
+Student first; no selling personal data; no manipulation; transparent sponsorship; no fake reviews; privacy and safety by design; student autonomy; explainable AI.
+
+## Business model (planned)
+Student subscriptions; premium AI; marketplace commissions; events; institutional SaaS; brand partnerships; long-term intelligence APIs and services.
+
+## Founders
+- Hemanth Kumar S — Founder & Director
+- Jennifer Immanuale — Co-Founder
+
+## Key URLs
+- Home: https://shiftuplab.com/
+- Dino: https://shiftuplab.com/dino
+- Investors: https://shiftuplab.com/investors
+- Parents: https://shiftuplab.com/parents
+- Ethics: https://shiftuplab.com/company/ethics
+
+## Entity relationships
+Student → interested in → Skill
+Student → considers → University
+Student → joins → Community
+Student → applies to → Opportunity
+Course → develops → Skill
+Career → requires → Skill
